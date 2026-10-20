@@ -12,7 +12,7 @@ import {
   useRef,
   useState,
 } from 'react';
-
+import { MovieMetaInfo } from '@/components/MovieMetaInfo';
 import { isAnimeCategoryText } from '@/lib/anime-keyword-expr';
 import { createAnime4KRenderer } from '@/lib/anime4k';
 import { getAuthInfoFromBrowserCookie } from '@/lib/auth';
