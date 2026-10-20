@@ -400,12 +400,12 @@ async function searchPlayableSources(
     1000,
     Number(process.env.TVBOX_DOUBAN_SEARCH_TIMEOUT || '6500') || 6500,
   );
-
-  const sources = config.SourceConfig.filter((source) => {
-    if (source.disabled) return false;
-    if (filterAdult && source.is_adult) return false;
-    return true;
-  }).slice(0, sourceLimit);
+ 
+const sources = config.SourceConfig.filter((source) => {
+  if (source.disabled) return false;
+  if (filterAdult && (source as any).is_adult) return false;
+  return true;
+}).slice(0, sourceLimit);
 
   const results: SearchResult[] = [];
   const concurrency = 6;
