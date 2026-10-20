@@ -296,6 +296,19 @@ const VIDEO_LOAD_STEPS: LoadingStep[] = [
   { label: '播放', icon: <Play /> },
 ];
 
+function buildTmdbImageProxyUrl(
+  path?: string | null,
+  size = 'w185',
+): string | undefined {
+  if (!path) {
+    return undefined;
+  }
+
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  const rawUrl = `https://image.tmdb.org/t/p/${size}${normalizedPath}`;
+  return `/api/image-proxy?url=${encodeURIComponent(rawUrl)}`;
+}
+
 function mapTmdbCelebrity(
   id: number,
   name: string,
