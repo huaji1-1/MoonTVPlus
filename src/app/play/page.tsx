@@ -136,6 +136,28 @@ declare global {
   }
 }
 
+
+interface TmdbSupplementDetail {
+  title: string;
+  originalTitle?: string;
+  overview?: string;
+  tagline?: string;
+  rating?: number;
+  releaseDate?: string;
+  status?: string;
+  genres: string[];
+  countries: string[];
+  languages: string[];
+  year?: string;
+  durations: string[];
+  seasons?: number;
+  episodes?: number;
+  directors: DoubanCelebrity[];
+  casts: DoubanCelebrity[];
+}
+
+
+
 // Wake Lock API 类型声明
 interface WakeLockSentinel {
   released: boolean;
