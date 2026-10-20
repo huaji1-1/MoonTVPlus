@@ -12,6 +12,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { type DoubanCelebrity, useDoubanInfo } from '@/hooks/useDoubanInfo';
 import { MovieMetaInfo } from '@/components/MovieMetaInfo';
 import { isAnimeCategoryText } from '@/lib/anime-keyword-expr';
 import { createAnime4KRenderer } from '@/lib/anime4k';
