@@ -70,8 +70,8 @@ export interface IStorage {
   deleteMusicPlayRecord(userName: string, key: string): Promise<void>;
   clearAllMusicPlayRecords(userName: string): Promise<void>;
 
-  // 用户相关
-  registerUser(userName: string, password: string): Promise<void>;
+  // 用户相关 
+  // registerUser(userName: string, password: string): Promise<void>;
   verifyUser(userName: string, password: string): Promise<boolean>;
   // 检查用户是否存在（无需密码）
   checkUserExist(userName: string): Promise<boolean>;
