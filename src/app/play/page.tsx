@@ -295,6 +295,26 @@ const VIDEO_LOAD_STEPS: LoadingStep[] = [
   { label: '播放', icon: <Play /> },
 ];
 
+function mapTmdbCelebrity(
+  id: number,
+  name: string,
+  profilePath?: string | null,
+  roles?: string[],
+): DoubanCelebrity {
+  return {
+    id: String(id),
+    name,
+    avatars: profilePath
+      ? {
+          small: buildTmdbImageProxyUrl(profilePath, 'w92') || '',
+          medium: buildTmdbImageProxyUrl(profilePath, 'w185') || '',
+          large: buildTmdbImageProxyUrl(profilePath, 'w300') || '',
+        }
+      : undefined,
+    roles,
+  };
+}
+
 function PlayPageClient() {
   const LOCAL_TRANSCODER_BASE_URL = 'http://localhost:19080';
   const router = useRouter();
